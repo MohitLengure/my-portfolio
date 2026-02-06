@@ -1,68 +1,62 @@
 // src/components/Footer.jsx
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Heart } from 'lucide-react';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-surface-800 text-gray-300 py-12 border-t border-gray-700">
-      <div className="container mx-auto px-4">
-        {/* Contact Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="flex items-center space-x-3 hover:text-white transition">
-            <Phone className="h-5 w-5 text-primary-500" />
-            <a href="tel:+917387784164" className="hover:underline">
-              +91 7387784164
-            </a>
+    <footer className="bg-white border-t border-surface-200 py-12 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-40 bg-primary-200/40 blur-[100px] rounded-full pointer-events-none" />
+
+      <div className="container-custom relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl font-bold text-surface-900 mb-2">Mohit Lengure<span className="text-primary-500">.</span></h3>
+            <p className="text-surface-600 text-sm">Full Stack Developer & Android Engineer</p>
           </div>
-          
-          <div className="flex items-center space-x-3 hover:text-white transition">
-            <Mail className="h-5 w-5 text-primary-500" />
-            <a href="mailto:mohitlengure2002@gmail.com" className="hover:underline">
-              mohitlengure2002@gmail.com
-            </a>
-          </div>
-          
-          <div className="flex items-center space-x-3 hover:text-white transition">
-            <Linkedin className="h-5 w-5 text-primary-500" />
-            <a 
-              href="https://linkedin.com/in/mohit-lengure-946077200" 
-              target="_blank" 
+
+          <div className="flex items-center gap-6">
+            <a
+              href="https://github.com/MohitLengure"
+              target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="p-2 text-surface-500 hover:text-primary-600 hover:bg-surface-100 rounded-lg transition-all"
+              aria-label="GitHub"
             >
-              LinkedIn Profile
+              <Github className="w-5 h-5" />
             </a>
-          </div>
-          
-          <div className="flex items-center space-x-3 hover:text-white transition">
-            <Github className="h-5 w-5 text-primary-500" />
-            <a 
-              href="https://github.com/MohitLengure" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com/in/mohit-lengure-946077200"
+              target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="p-2 text-surface-500 hover:text-primary-600 hover:bg-surface-100 rounded-lg transition-all"
+              aria-label="LinkedIn"
             >
-              GitHub Profile
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:mohitlengure2002@gmail.com"
+              className="p-2 text-surface-500 hover:text-primary-600 hover:bg-surface-100 rounded-lg transition-all"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+            <a
+              href="tel:+917387784164"
+              className="p-2 text-surface-500 hover:text-primary-600 hover:bg-surface-100 rounded-lg transition-all"
+              aria-label="Phone"
+            >
+              <Phone className="w-5 h-5" />
             </a>
           </div>
         </div>
 
-        {/* Navigation Links */}
-        {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-          <a href="#home" className="hover:text-white transition">Home</a>
-          <a href="#about" className="hover:text-white transition">About</a>
-          <a href="#skills" className="hover:text-white transition">Skills</a>
-          <a href="#projects" className="hover:text-white transition">Projects</a>
-          <a href="#blog" className="hover:text-white transition">Blog</a>
-          <a href="#contact" className="hover:text-white transition">Contact</a>
-        </div> */}
-
-        {/* Copyright */}
-        <div className="pt-8 border-t border-gray-700 text-center">
-          <p className="text-sm">
-            © {new Date().getFullYear()} Mohit Lengure. All rights reserved.
-          </p>
-          <p className="text-xs mt-2 text-gray-500">
-            Crafted with React and Tailwind CSS
+        <div className="mt-8 pt-8 border-t border-surface-100 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-surface-500">
+          <p>&copy; {currentYear} All rights reserved.</p>
+          <p className="flex items-center gap-1">
+            Made with <Heart className="w-4 h-4 text-red-500 fill-red-500/20" /> in India
           </p>
         </div>
       </div>

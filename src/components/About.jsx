@@ -1,124 +1,54 @@
-// components/About.jsx
-import { CheckCircleIcon, CodeBracketIcon, DevicePhoneMobileIcon, ServerStackIcon, CpuChipIcon } from '@heroicons/react/24/solid';
+// src/components/About.jsx
 import { motion } from 'framer-motion';
+import { Briefcase, Code, User, Rocket } from 'lucide-react';
 import MainPhoto from "../assets/Main Photo.jpg";
 
 export default function About() {
-  const skills = [
-    { name: "Flutter & Dart", icon: <DevicePhoneMobileIcon className="h-5 w-5 text-primary-400 mr-2" /> },
-    { name: "Kotlin & Jetpack Compose", icon: <CodeBracketIcon className="h-5 w-5 text-primary-400 mr-2" /> },
-    { name: "Java & Android SDK", icon: <CpuChipIcon className="h-5 w-5 text-primary-400 mr-2" /> },
-    { name: "Laravel & MySQL", icon: <ServerStackIcon className="h-5 w-5 text-primary-400 mr-2" /> },
-    { name: "REST API Development", icon: <CodeBracketIcon className="h-5 w-5 text-primary-400 mr-2" /> },
-    { name: "UI/UX-Focused Design", icon: <DevicePhoneMobileIcon className="h-5 w-5 text-primary-400 mr-2" /> },
-  ];
-
   return (
-    <section id="about" className="py-20 px-4 bg-surface-900 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-primary-500/10 rounded-full filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-secondary-500/10 rounded-full filter blur-3xl opacity-20"></div>
-      
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-4xl font-bold mb-8 text-white">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Me</span>
-          </h2>
-          
-          <div className="space-y-6">
-            <motion.p 
-              className="text-lg text-gray-300"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              I'm Mohit Lengure, a passionate Full Stack and Android Developer with over 1 year of hands-on experience in building scalable apps and efficient backend systems.
-            </motion.p>
-            
-            <motion.p 
-              className="text-lg text-gray-300"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              I specialize in developing cross-platform mobile apps using Flutter, Kotlin and Java, alongside backend systems using Laravel and MySQL. Whether it's building real-time apps like GrowFund or integrating Firebase and CameraX for advanced features, I aim to deliver clean, maintainable, and user-centric solutions.
-            </motion.p>
-            
-            <motion.p 
-              className="text-lg text-gray-300"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              I thrive on transforming ideas into working software, continuously learning and exploring new technologies to stay ahead in this fast-evolving tech landscape.
-            </motion.p>
-          </div>
+    <div className="col-span-1 md:col-span-12 lg:col-span-8 bento-card p-8 flex flex-col md:flex-row gap-8 items-center bento-card-hover group">
+      {/* Decorative Background */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-100 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-80 transition-opacity"></div>
 
-          <motion.div 
-            className="grid grid-cols-2 gap-4 mt-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-          >
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ x: 5 }}
-                className="flex items-center bg-surface-800 border border-surface-700 rounded-lg px-4 py-3 hover:border-primary-500/30 transition-colors"
-              >
-                {skill.icon}
-                <span className="text-gray-300">{skill.name}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        <motion.div 
-          className="relative"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative h-96 w-full overflow-hidden rounded-xl border-2 border-surface-700 group-hover:border-primary-500/50 transition-all duration-500">
-              <img
-                src={MainPhoto}
-                alt="Mohit Lengure"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-900/70 via-surface-900/10 to-transparent"></div>
-            </div>
-          </div>
-          
-          {/* Floating tech badges */}
-          <motion.div 
-            className="absolute -bottom-4 -left-4 bg-surface-800 border border-primary-500/30 rounded-lg px-4 py-2 shadow-lg"
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            <span className="text-sm font-mono text-primary-300">Android Dev</span>
-          </motion.div>
-          
-          <motion.div 
-            className="absolute -top-4 -right-4 bg-surface-800 border border-primary-500/30 rounded-lg px-4 py-2 shadow-lg"
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-          >
-            <span className="text-sm font-mono text-primary-300">Flutter</span>
-          </motion.div>
-        </motion.div>
+      <div className="w-32 h-32 md:w-48 md:h-48 shrink-0 relative">
+        <div className="w-full h-full rounded-2xl overflow-hidden border-4 border-surface-50 shadow-lg relative z-10">
+          <img
+            src={MainPhoto}
+            alt="Mohit Lengure"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute -bottom-3 -right-3 z-20 bg-white p-2 rounded-lg shadow-md border border-surface-100">
+          <Code className="text-primary-600 w-6 h-6" />
+        </div>
       </div>
-    </section>
+
+      <div className="relative z-10">
+        <div className="flex items-center gap-2 mb-3">
+          <h2 className="text-2xl font-bold text-surface-900">About Me</h2>
+          <div className="h-px bg-surface-200 flex-grow ml-4"></div>
+        </div>
+
+        <p className="text-surface-600 leading-relaxed mb-6">
+          I'm a passionate Software Engineer driven by the curiosity to understand how things work.
+          With specialized expertise in <span className="text-primary-700 font-semibold bg-primary-50 px-1 rounded">Flutter, Kotlin, and React</span>,
+          I bridge the gap between complex backend systems and intuitive user interfaces.
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="bg-surface-50 p-3 rounded-xl border border-surface-100 flex flex-col items-center text-center">
+            <span className="text-xl font-bold text-surface-900">10+</span>
+            <span className="text-xs text-surface-500 uppercase font-medium">Projects</span>
+          </div>
+          <div className="bg-surface-50 p-3 rounded-xl border border-surface-100 flex flex-col items-center text-center">
+            <span className="text-xl font-bold text-surface-900">1+</span>
+            <span className="text-xs text-surface-500 uppercase font-medium">Years</span>
+          </div>
+          <div className="col-span-2 sm:col-span-1 bg-primary-600 p-3 rounded-xl shadow-lg shadow-primary-500/20 flex flex-col items-center text-center text-white">
+            <Rocket className="w-5 h-5 mb-1" />
+            <span className="text-xs font-bold uppercase">Hire Me</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
