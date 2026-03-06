@@ -49,7 +49,7 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="col-span-1 md:col-span-12 bento-card p-8 lg:p-12 relative overflow-hidden bg-white">
+    <div id="contact" className="col-span-1 md:col-span-12 bento-card p-8 lg:p-12 relative overflow-hidden bg-[#fafafa]">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-primary-100/40 rounded-full blur-[100px]" />
@@ -74,7 +74,7 @@ export default function Contact() {
 
           <div className="space-y-4">
             <a href="mailto:contact@mohit.dev" className="flex items-center gap-4 p-4 bg-surface-50/50 border border-surface-200 rounded-2xl hover:bg-surface-50 transition-colors group">
-              <div className="p-3 bg-white rounded-xl shadow-sm border border-surface-100 text-primary-600 group-hover:scale-110 transition-transform">
+              <div className="p-3 bg-[#fafafa] rounded-xl shadow-sm border border-surface-100 text-primary-600 group-hover:scale-110 transition-transform">
                 <Mail className="w-6 h-6" />
               </div>
               <div>
@@ -84,7 +84,7 @@ export default function Contact() {
             </a>
 
             <div className="flex items-center gap-4 p-4 bg-surface-50/50 border border-surface-200 rounded-2xl">
-              <div className="p-3 bg-white rounded-xl shadow-sm border border-surface-100 text-secondary-600">
+              <div className="p-3 bg-[#fafafa] rounded-xl shadow-sm border border-surface-100 text-secondary-600">
                 <MessageSquare className="w-6 h-6" />
               </div>
               <div>
@@ -120,7 +120,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="John Doe"
-                  className="w-full bg-white border border-surface-200 rounded-xl py-3 px-4 text-surface-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all placeholder:text-surface-400"
+                  className="w-full bg-[#fafafa] border border-surface-200 rounded-xl py-3 px-4 text-surface-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all placeholder:text-surface-400"
                 />
               </div>
 
@@ -133,7 +133,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="john@example.com"
-                  className="w-full bg-white border border-surface-200 rounded-xl py-3 px-4 text-surface-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all placeholder:text-surface-400"
+                  className="w-full bg-[#fafafa] border border-surface-200 rounded-xl py-3 px-4 text-surface-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all placeholder:text-surface-400"
                 />
               </div>
             </div>
@@ -160,7 +160,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 placeholder="Tell me about your project..."
-                className="w-full bg-white border border-surface-200 rounded-xl py-3 px-4 text-surface-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all placeholder:text-surface-400 resize-none"
+                className="w-full bg-[#fafafa] border border-surface-200 rounded-xl py-3 px-4 text-surface-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all placeholder:text-surface-400 resize-none"
               />
             </div>
 

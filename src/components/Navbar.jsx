@@ -95,7 +95,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className={`flex items-center gap-1 rounded-full px-2 py-1.5 transition-all duration-500 ${scrolled ? 'bg-transparent' : 'bg-white/50 backdrop-blur-md border border-surface-200 shadow-sm'
+              className={`flex items-center gap-1 rounded-full px-2 py-1.5 transition-all duration-500 ${scrolled ? 'bg-transparent' : 'bg-[#fafafa]/50 backdrop-blur-md border border-surface-200 shadow-sm'
                 }`}
             >
               {links.map((link) => {
@@ -112,7 +112,7 @@ export default function Navbar() {
                     {isActive && (
                       <motion.span
                         layoutId="activeTab"
-                        className="absolute inset-0 bg-white shadow-sm border border-surface-200 rounded-full"
+                        className="absolute inset-0 bg-[#fafafa] shadow-sm border border-surface-200 rounded-full"
                         style={{ zIndex: 0 }}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
@@ -150,7 +150,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="md:hidden absolute top-0 left-0 w-full bg-white border-b border-surface-200 shadow-xl pt-24 pb-8 px-4 flex flex-col gap-4"
+                className="md:hidden absolute top-0 left-0 w-full bg-[#fafafa] border-b border-surface-200 shadow-xl pt-24 pb-8 px-4 flex flex-col gap-4"
               >
                 {links.map((link, i) => (
                   <motion.a

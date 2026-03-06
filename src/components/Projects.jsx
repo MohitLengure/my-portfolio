@@ -1,13 +1,9 @@
 // src/components/Projects.jsx
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink, Github, Smartphone, Cpu, Database, Code, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import objectDetectionImg from '../assets/object-detection.png';
-import quickBillImg from '../assets/QuickBill.png';
-import GrownFund from '../assets/GrownFund.png';
-import QuickHire from '../assets/QuickHire.png';
-import quickBitesImg from '../assets/quickbites.png';
-import BVS from '../assets/BVS.jpg';
+import { projects } from '../data/projects';
 
 const ProjectCard = ({ project }) => {
   return (
@@ -72,17 +68,13 @@ const ProjectCard = ({ project }) => {
             </a>
           )}
 
-          {project.liveLink && (
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 inline-flex justify-center items-center py-2 rounded-xl bg-surface-900 hover:bg-primary-600 text-white shadow-lg shadow-surface-900/10 hover:shadow-primary-600/20 transition-all text-sm font-medium group/btn"
-            >
-              <span className="mr-2">View Project</span>
-              <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-            </a>
-          )}
+          <Link
+            to={`/project/${project.id}`}
+            className="flex-1 inline-flex justify-center items-center py-2 rounded-xl bg-surface-900 hover:bg-primary-600 text-white shadow-lg shadow-surface-900/10 hover:shadow-primary-600/20 transition-all text-sm font-medium group/btn"
+          >
+            <span className="mr-2">View Project</span>
+            <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+          </Link>
         </div>
       </div>
     </div>
@@ -93,62 +85,7 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  const projects = [
-    {
-      title: "GrowFund App",
-      description: "Secure investment platform with Gmail OTP verification and real-time portfolio tracking.",
-      tags: ["Flutter", "Laravel", "REST API", "Firebase"],
-      image: GrownFund,
-      githubLink: "https://github.com/MohitLengure/growfund-app",
-      liveLink: "/apk/growfund.apk",
-      icon: <Smartphone className="h-5 w-5 text-primary-500" />
-    },
-    {
-      title: "QuickHire Recruiter",
-      description: "Recruiter dashboard with advanced candidate filtering and analytics.",
-      tags: ["Flutter", "Dart", "Laravel", "State Mgmt"],
-      image: QuickHire,
-      githubLink: "https://github.com/MohitLengure/quickhire-recruiter",
-      liveLink: "/apk/quickhire-recruiter.apk",
-      icon: <Cpu className="h-5 w-5 text-secondary-500" />
-    },
-    {
-      title: "QuickBill App",
-      description: "POS solution with inventory management and thermal printing support.",
-      tags: ["Flutter", "Laravel", "Printing", "SQLite"],
-      image: quickBillImg,
-      githubLink: "https://github.com/MohitLengure/quickbill-app",
-      liveLink: "/apk/quickbill.apk",
-      icon: <Database className="h-5 w-5 text-accent-teal" />
-    },
-    {
-      title: "Realtime Object Detection",
-      description: "Android app utilizing ML Kit for live object recognition.",
-      tags: ["ML Kit", "Android", "Kotlin", "CameraX"],
-      image: objectDetectionImg,
-      githubLink: "https://github.com/MohitLengure/realtime-object-detection",
-      liveLink: "/apk/realtime-object-detection.apk",
-      icon: <Code className="h-5 w-5 text-accent-rose" />
-    },
-    {
-      title: "BVS App",
-      description: "Lead management with real-time GPS tracking and analytics.",
-      tags: ["Flutter", "GPS", "Background Services"],
-      image: BVS,
-      githubLink: "https://github.com/MohitLengure/bvs-app",
-      liveLink: "/apk/bvs.apk",
-      icon: <Smartphone className="h-5 w-5 text-primary-500" />
-    },
-    {
-      title: "QuickBites Food",
-      description: "Food delivery platform with real-time order tracking.",
-      tags: ["Android", "Kotlin", "Firebase", "MVVM"],
-      image: quickBitesImg,
-      githubLink: "https://github.com/MohitLengure/quickbites-food-app",
-      liveLink: "#",
-      icon: <Code className="h-5 w-5 text-secondary-500" />
-    }
-  ];
+
 
   const itemsPerPage = 3;
 

@@ -5,7 +5,7 @@ import MainPhoto from "../assets/Main Photo.jpg";
 
 export default function About() {
   return (
-    <div className="col-span-1 md:col-span-12 lg:col-span-8 bento-card p-8 flex flex-col md:flex-row gap-8 items-center bento-card-hover group">
+    <div id="about" className="w-full bento-card p-8 flex flex-col md:flex-row gap-8 items-center bento-card-hover group">
       {/* Decorative Background */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-100 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-80 transition-opacity"></div>
 
@@ -17,7 +17,7 @@ export default function About() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute -bottom-3 -right-3 z-20 bg-white p-2 rounded-lg shadow-md border border-surface-100">
+        <div className="absolute -bottom-3 -right-3 z-20 bg-[#fafafa] p-2 rounded-lg shadow-md border border-surface-100">
           <Code className="text-primary-600 w-6 h-6" />
         </div>
       </div>
@@ -43,10 +43,10 @@ export default function About() {
             <span className="text-xl font-bold text-surface-900">1+</span>
             <span className="text-xs text-surface-500 uppercase font-medium">Years</span>
           </div>
-          <div className="col-span-2 sm:col-span-1 bg-primary-600 p-3 rounded-xl shadow-lg shadow-primary-500/20 flex flex-col items-center text-center text-white">
+          <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="col-span-2 sm:col-span-1 bg-primary-600 p-3 rounded-xl shadow-lg shadow-primary-500/20 flex flex-col items-center text-center text-white hover:-translate-y-1 transition-transform cursor-pointer">
             <Rocket className="w-5 h-5 mb-1" />
             <span className="text-xs font-bold uppercase">Hire Me</span>
-          </div>
+          </a>
         </div>
       </div>
     </div>

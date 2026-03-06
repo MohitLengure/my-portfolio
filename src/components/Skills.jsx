@@ -21,22 +21,22 @@ export default function Skills() {
   ];
 
   return (
-    <div id="skills" className="col-span-1 md:col-span-12 lg:col-span-4 bento-card p-6 flex flex-col bento-card-hover bg-surface-50/50">
-      <h3 className="text-xl font-bold text-surface-900 mb-4 flex items-center gap-2">
-        <Terminal className="text-surface-400" size={20} />
+    <div id="skills" className="w-full bento-card p-6 lg:p-8 flex flex-col bento-card-hover bg-[#fafafa]/50">
+      <h3 className="text-xl lg:text-3xl font-bold text-surface-900 mb-6 flex items-center gap-3">
+        <Terminal className="text-surface-400" size={28} />
         Tech Stack
       </h3>
 
-      <div className="space-y-4 flex-grow">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 flex-grow">
         {skillCategories.map((cat, i) => (
-          <div key={i} className="bg-white p-3 rounded-xl border border-surface-100 shadow-sm hover:border-primary-200 transition-colors">
-            <div className="flex items-center gap-2 mb-2">
+          <div key={i} className="bg-[#fafafa] p-5 rounded-xl border border-surface-100 shadow-sm hover:border-primary-200 transition-colors">
+            <div className="flex items-center gap-3 mb-4">
               {cat.icon}
-              <span className="font-semibold text-surface-800 text-sm">{cat.name}</span>
+              <span className="font-bold text-surface-800 text-lg">{cat.name}</span>
             </div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {cat.skills.map(skill => (
-                <span key={skill} className="px-2 py-0.5 bg-surface-100 text-surface-600 text-[10px] rounded font-mono">
+                <span key={skill} className="px-3 py-1 bg-surface-100 text-surface-700 text-sm rounded font-mono font-medium">
                   {skill}
                 </span>
               ))}

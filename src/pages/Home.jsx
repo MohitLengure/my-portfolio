@@ -69,9 +69,13 @@ export default function Home() {
             <Hero />
           </motion.div>
 
-          {/* Main Content Grid */}
-          <motion.div className="col-span-1 md:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-6" variants={itemVariants}>
+          {/* About Section */}
+          <motion.div className="col-span-1 md:col-span-12" variants={itemVariants}>
             <About />
+          </motion.div>
+
+          {/* Skills Section */}
+          <motion.div className="col-span-1 md:col-span-12" variants={itemVariants}>
             <Skills />
           </motion.div>
 

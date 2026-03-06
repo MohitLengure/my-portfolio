@@ -54,7 +54,7 @@
   }
 
   .bento-card {
-    @apply bg-white rounded-3xl border border-surface-200 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden relative;
+    @apply bg-[#fafafa] rounded-3xl border border-surface-200 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden relative;
   }
 
   .bento-card-hover {
@@ -79,11 +79,11 @@
   }
 
   .glass-card {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl shadow-surface-200/50;
+    @apply bg-[#fafafa]/70 backdrop-blur-xl border border-white/20 shadow-xl shadow-surface-200/50;
   }
   
   .glass-nav {
-    @apply bg-white/80 backdrop-blur-md border-b border-surface-200 shadow-sm supports-[backdrop-filter]:bg-white/60;
+    @apply bg-[#fafafa]/80 backdrop-blur-md border-b border-surface-200 shadow-sm supports-[backdrop-filter]:bg-[#fafafa]/60;
   }
 
   .text-gradient {
